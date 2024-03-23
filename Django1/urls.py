@@ -16,8 +16,9 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from Django01.views import (
-    TestListApiView,)
+    TestListApiView,TestDetailApiView)
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api', TestListApiView.as_view()),
+    path('api/<int:id>/', TestDetailApiView.as_view()),
 ]
